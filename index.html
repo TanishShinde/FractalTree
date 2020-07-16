@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Fractal Tree</title>
+		<script src="fractaltree.js"></script>
+	</head>
+	<body>
+		<canvas width="500" height="500" id="mycanvas"></canvas>
+		<input type="range" min="0" max="200" value="40" id="myRange" class="slider">
+		<script type="text/javascript">
+			var c = document.getElementById("mycanvas");
+			var ctx = c.getContext("2d");
+			var slider = document.getElementById("myRange");
+			slider.oninput=function(){
+				ctx.clearRect(0,0,500,500);
+				draw_tree(ctx,[250,450],Math.PI/2,slider.value/100,140,11,0);
+			}
+
+		</script>
+	</body>
+</html>
